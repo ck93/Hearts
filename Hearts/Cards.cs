@@ -46,10 +46,13 @@ namespace Hearts
         {
             player.RemoveAt(index);
         }
-        public void Play()
+        public int Play()
         {
             Random rd = new Random();
-            player.RemoveAt(rd.Next(0, player.Count));
+            int index = rd.Next(0, player.Count);
+            int cardIndex = player[index];
+            player.RemoveAt(index);
+            return cardIndex;
         }
         /*返回所有牌*/
         public List<int> GetCards()
